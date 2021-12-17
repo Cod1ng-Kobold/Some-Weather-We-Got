@@ -15,4 +15,4 @@ const inputVal = input.value;
 
 ...
 
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiK
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputVal}&appid=${apiKey};
