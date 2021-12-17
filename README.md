@@ -8,3 +8,4 @@ This is a simple weather app using the OpenWeather API to find the weather for c
 Type in a city and country with this format: *city,countryCode*
 Then, select the Search button or press enter.
 ## Link to Application
+https://cod1ng-kobold.github.io/Some-Weather-We-Got/
