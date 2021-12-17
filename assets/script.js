@@ -10,4 +10,5 @@ var city;
 // Concatenation of URL to the OpenWeather Map API, includes city and APIKey
 var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIKey;
 
+//Fetch
 fetch(queryURL)
