@@ -39,7 +39,7 @@ var loadCity = function(){
             ulElement.classList.add("list-unstyled");
             ulElement.classList.add("w-100");
             
-         
+         // 'For' creates a loop, this loops sets 'i' to zero, then runs as long as 'i' is less than the 'datastore.length', increments by one
             for(var i = 0; i < dataStore.length; i++){
                 
                 var liElement = document.createElement("li");
@@ -64,17 +64,17 @@ $(document).on("click", ".list-group-item", function(event) {
     callApiFetch(city);
 });
 
-
+// The 'cleaningElement' sets the 'innerHTML' to nothing.
 var cleaningElement = function(element){
     element.innerHTML = "";
 };
 
-
+// I was deciding whether to use Farenheit or Celsius, and I said: "Why not both?". This is the code that answers that question.
 var converTemp = function(temp){
     return (Math.floor((parseFloat(temp) -32) * (5/9))).toString();
 };
 
-
+// Converts Wind Speed from MPH to KPH
 var convertWSpeed = function(speed){
     return (Math.floor(parseFloat(speed) * 1.609)).toString();
 };
@@ -102,12 +102,9 @@ var findUV = function(uv){
     return bgColor;
 };
 
-
+// This sets the current weather forcast for the current day
 var weatherHTML = function (city, uv) {
 
-  
-
-   
     cleaningElement(containerCurrent);
     cleaningElement(containerForecast); 
 
@@ -149,7 +146,7 @@ var weatherHTML = function (city, uv) {
     ctn8.classList.add("d-flex");            
 
 
-    
+    // creates the card format for the 5-Day forcast
     for(var i=1; i<weatherCondition.length; i++){    
         
         var ctn4  = document.createElement("div");      
@@ -174,10 +171,13 @@ var weatherHTML = function (city, uv) {
         pEl1.textContent =   "Temperature: " + weatherCondition[i].temp + " °F";
         pEl2.classList.add("small");
         pEl2.textContent =  "Humidity: " + weatherCondition[i].humidity + "%";
+        pEl3.classList.add("small");
+        pEl3.textContent = "Wind Speed: " + weatherCondition[i].speed + " MPH /" + convertWSpeed(weatherCondition[i].speed) + " KPH";
         ctn5.appendChild(title);
         ctn5.appendChild(imageForecast);
         ctn5.appendChild(pEl1);
-        ctn5.appendChild(pEl2)
+        ctn5.appendChild(pEl2);
+        ctn5.appendChild(pEl3);
         ctn4.appendChild(ctn5);        
         ctn8.appendChild(ctn4);
     }
