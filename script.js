@@ -324,7 +324,7 @@ var callApiFetch = function(city){
         })
     })
         .catch(function(error) {
-            // if there is a problen to connect to OpenWeathermap.org
+            // if there is a problem to connect to OpenWeathermap.org
             displayAlertMessage("Unable to connect to OpenWeathermap.org");
             return;
           });
