@@ -6,7 +6,7 @@ var containerHistoricCities = document.querySelector("#historic-Cities");
 var containerCurrent = document.querySelector("#targetCity");
 // get the reference
 var containerForecast = document.querySelector("#infoCity");
-
+// Parsing the JSON file turns it into an object
 var dataStore = JSON.parse(localStorage.getItem('cities')) || [];
 
 var urlIcon;
@@ -169,6 +169,7 @@ var weatherHTML = function (city, uv) {
         imageForecast.setAttribute("src", weatherCondition[i].icon);
         var pEl1 = document.createElement("p");
         var pEl2 = document.createElement("p");
+        var pEl3 = document.createElement("p");
         pEl1.classList.add("small");
         pEl1.textContent =   "Temperature: " + weatherCondition[i].temp + " °F";
         pEl2.classList.add("small");
